@@ -43,7 +43,7 @@ It means that frequency of carrier is 88.7 MHz. Duration = 30 means that songs w
 
 Attenton! In current version ONLY .mp3 files in your music dirs will be played, DON'T change the Extention value, be sure that Extention = mp3.
 
-Shuffle = on means that files in your music dirs will be played in direct lexicographic order.
+Shuffle = off means that files in your music dirs will be played in direct lexicographic order.
 
 As a result a config file must be kind of
 
