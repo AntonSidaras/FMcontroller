@@ -1,4 +1,4 @@
-version 1.6.2
+ï»¿version 1.6.2
 
 [basic]
 
@@ -80,7 +80,7 @@ exit - to quit the programm
 renew - to update information from config file
 stop - to stop the transmission (valid for play command)
 play - find music file you like in your music directories by words that you type, confirm
-to continue use founded results (y/ä) with rememder in file (y+/ä+) or not (n/í), choose one
+to continue use founded results (y/Ð´) with rememder in file (y+/Ð´+) or not (n/Ð½), choose one
 needed file by typing id number (id will be displayed) and start transmit. 
 For example:
 
@@ -90,7 +90,7 @@ some results:
 1 - /etc/Music/bad boys blue - you're woman.mp3
 2 - /etc/Music/bad boys blue - pretty young girl.mp3
 
-continue? (y/ä, n/í, y+/ä+): y+
+continue? (y/Ð´, n/Ð½, y+/Ð´+): y+
 type id: 1
 
 list - to display files in memory file
@@ -104,9 +104,9 @@ some results:
 2 - /etc/Music/bad boys blue - pretty young girl.mp3
 type id: 1
 
-playlist - find music directories you like, confirm to continue use founded results (y/ä) with rememder 
-in file (y+/ä+) or not (n/í) and start transmit. Also ind music files you like in your music directories 
-by words that you type, confirm to continue use founded results (y/ä) with rememder in file (y+/ä+) or not (n/í)
+playlist - find music directories you like, confirm to continue use founded results (y/Ð´) with rememder 
+in file (y+/Ð´+) or not (n/Ð½) and start transmit. Also ind music files you like in your music directories 
+by words that you type, confirm to continue use founded results (y/Ð´) with rememder in file (y+/Ð´+) or not (n/Ð½)
 and start transmit. 
 For example:
 
@@ -115,7 +115,7 @@ main>playlist bad boys blue
 some results:
 1- /etc/Music/bad boys blue - you're woman.mp3
 2- /etc/Music/bad boys blue - pretty young girl.mp3
-continue? (y/ä, n/í, y+/ä+): y+
+continue? (y/Ð´, n/Ð½, y+/Ð´+): y+
 
 Or
 
@@ -124,7 +124,7 @@ main>playlist
 some results:
 1 - /etc/Music/bonus
 2 - /etc/Music/random music
-continue? (y/ä, n/í, y+/ä+): y+
+continue? (y/Ð´, n/Ð½, y+/Ð´+): y+
 type id: 1
 
 In playlist section you can use such commands:
