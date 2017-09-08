@@ -13,30 +13,24 @@ Required software (some of them you can get with a help of command "apt-get"):
 5. PiFmRds script, you can get it by this link https://github.com/ChristopheJacquet/PiFmRds
 There is all information how to make it and run in https://github.com/ChristopheJacquet/PiFmRds
 
-When the preparation is over it's time to edit the config file, before it I recommend to rename PiFmRds script 
-to "fm" and place it in "important" directory. You can find config in "important" directory. Simply open it with
-a help of text editor. Now, change the values as you like. Note this rules:
+When the preparation is over it's time to edit the config file, before it I recommend to rename PiFmRds script to "fm" and place it in "important" directory. You can find config in "important" directory. Simply open it with a help of text editor. Now, change the values as you like. Note this rules:
 
-There is two main sections in config : [music] and [output]. In section [music] you can add music folder in Unix
-format. Each new folder must be added to new line, like this:
+There is two main sections in config : [music] and [output]. In section [music] you can add music folder in Unix format. Each new folder must be added to new line, like this:
 [music]
 /etc/Music
 /ect/NewMusic
 /home/username/Music
 
-In section [output] you can just edit existing parameters Frequency, Duration, Shuffle. Here are some
-examples how to do it right:
+In section [output] you can just edit existing parameters Frequency, Duration, Shuffle. Here are some examples how to do it right:
 
 Frequency = 100.5
 Duration = 0
 Extention = mp3
 Shuffle = on
 
-It means that frequency of carrier is 100.5 MHz. Duration = 0 means that songs will be played entirely,
-extention = mp3 means that only .mp3 files in your music dirs will be played. 
+It means that frequency of carrier is 100.5 MHz. Duration = 0 means that songs will be played entirely, extention = mp3 means that only .mp3 files in your music dirs will be played. 
 
-Attenton! In current version ONLY .mp3 files in your music dirs will be played, DON'T change the Extention value,
-be sure that Extention = mp3.
+Attenton! In current version ONLY .mp3 files in your music dirs will be played, DON'T change the Extention value, be sure that Extention = mp3.
 
 Shuffle = on means that files in your music dirs will be played in random order.
 
@@ -45,11 +39,9 @@ Duration = 30
 Extention = mp3
 Shuffle = off
 
-It means that frequency of carrier is 88.7 MHz. Duration = 30 means that songs will be played 30 seconds length,
-extention = mp3 means that only .mp3 files in your music dirs will be played. 
+It means that frequency of carrier is 88.7 MHz. Duration = 30 means that songs will be played 30 seconds length, extention = mp3 means that only .mp3 files in your music dirs will be played. 
 
-Attenton! In current version ONLY .mp3 files in your music dirs will be played, DON'T change the Extention value,
-be sure that Extention = mp3.
+Attenton! In current version ONLY .mp3 files in your music dirs will be played, DON'T change the Extention value, be sure that Extention = mp3.
 
 Shuffle = on means that files in your music dirs will be played in direct lexicographic order.
 
@@ -64,10 +56,9 @@ Extention = mp3
 Shuffle = on
 
 Now, be shure, that all files, which were downloaded are exist. 
-Finally, go to the auxillary folder and open defaults.py with text editor. Change the value of efaultmusicdirs 
-variable to your default music directories or leave it, but if your music directories in config file don't not exist 
-programm will crash. If you didn't rename PiFmRds script to "fm" and place it in "important" directory change 
-the value of Transmitter variable to your path to the PiFmRds script.
+Finally, go to the auxillary folder and open defaults.py with text editor. 
+Change the value of efaultmusicdirs variable to your default music directories or leave it, but if your music directories in config file don't not exist programm will crash. 
+If you didn't rename PiFmRds script to "fm" and place it in "important" directory change the value of Transmitter variable to your path to the PiFmRds script.
 
 Now you can start the script like this:
 
@@ -79,9 +70,7 @@ just type the
 exit - to quit the programm
 renew - to update information from config file
 stop - to stop the transmission (valid for play command)
-play - find music file you like in your music directories by words that you type, confirm
-to continue use founded results (y/д) with rememder in file (y+/д+) or not (n/н), choose one
-needed file by typing id number (id will be displayed) and start transmit. 
+play - find music file you like in your music directories by words that you type, confirm to continue use founded results (y/д) with rememder in file (y+/д+) or not (n/н), choose one needed file by typing id number (id will be displayed) and start transmit. 
 For example:
 
 main>play bad boys blue
@@ -104,10 +93,7 @@ some results:
 2 - /etc/Music/bad boys blue - pretty young girl.mp3
 type id: 1
 
-playlist - find music directories you like, confirm to continue use founded results (y/д) with rememder 
-in file (y+/д+) or not (n/н) and start transmit. Also ind music files you like in your music directories 
-by words that you type, confirm to continue use founded results (y/д) with rememder in file (y+/д+) or not (n/н)
-and start transmit. 
+playlist - find music directories you like, confirm to continue use founded results (y/д) with rememder in file (y+/д+) or not (n/н) and start transmit. Also ind music files you like in your music directories by words that you type, confirm to continue use founded results (y/д) with rememder in file (y+/д+) or not (n/н) and start transmit. 
 For example:
 
 main>playlist bad boys blue
