@@ -57,7 +57,7 @@ Shuffle = on
 
 Now, be shure, that all files, which were downloaded are exist. 
 Finally, go to the auxillary folder and open defaults.py with text editor. 
-Change the value of efaultmusicdirs variable to your default music directories or leave it, but if your music directories in config file don't not exist programm will crash. 
+Change the value of defaultmusicdirs variable to your default music directories or leave it, but if your music directories in config file don't not exist programm will crash. 
 If you didn't rename PiFmRds script to "fm" and place it in "important" directory change the value of Transmitter variable to your path to the PiFmRds script.
 
 Now you can start the script like this:
@@ -93,7 +93,7 @@ some results:
 2 - /etc/Music/bad boys blue - pretty young girl.mp3
 type id: 1
 
-playlist - find music directories you like, confirm to continue use founded results (y/д) with rememder in file (y+/д+) or not (n/н) and start transmit. Also ind music files you like in your music directories by words that you type, confirm to continue use founded results (y/д) with rememder in file (y+/д+) or not (n/н) and start transmit. 
+playlist - find music directories you like, confirm to continue use founded results (y/д) with rememder in file (y+/д+) or not (n/н) and start transmit. Also find music files you like in your music directories by words that you type, confirm to continue use founded results (y/д) with rememder in file (y+/д+) or not (n/н) and start transmit. 
 For example:
 
 main>playlist bad boys blue
@@ -124,7 +124,7 @@ leave - to back in main section
 Also you can choose next and previous songs by using signals in GPIO 35 and 37 pins. 
 Logical "1" in 35 pin chooses previous song
 Logical "1" in 37 pin chooses next song
-Choose your own way to chang logical values on pins numer 35 and 37. If you need change
+Choose your own way to change logical values on pins numer 35 and 37. If you need change
 pin numers - edit the 433tuner.py
 
-Note the scripts displays the information in Russian, in next version English version vill be added.
+Note the scripts displays the information in Russian, in next version English version vill be avaliable.
