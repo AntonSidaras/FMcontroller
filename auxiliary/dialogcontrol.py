@@ -7,6 +7,22 @@ from auxiliary import defaults
 from auxiliary import foldbuilder
 from auxiliary import fmcontrol
 
+def checkdefaults():
+	if os.path.exists(defaults.configuration) == False:
+		print("Файл конфигурации не существует")
+		return False
+		
+	if os.path.exists(defaults.Transmitter) == False:
+		print("Скрипт передатчика не существует")
+		return False
+		
+	for music in defaults.defaultmusicdirs:
+		if os.path.exists(music) == False:
+			print("Список музыкальных папок по-умолчанию содержит несуществующие пути")
+			return False
+	
+	return True
+
 def askforindex(hint):
 	print(hint, end=' ')
 	sindex = getanswer("Индекс это число! " + hint, defaults.answers, 1)
@@ -91,19 +107,19 @@ def printfounded(founded):
 	for f in founded:
 		print(f)
 		
-def playproc(foundedfilesNI, freq, scriptfilename, transmitter, SOXPIDfilename, duration, index, sleeptime):
+def playproc(foundedfilesNI, frequency, index, duration, sleeptime):
 	mtp = returnfilebyidwcheck(index, foundedfilesNI)
 	if mtp != -1:
-		fmcontrol.killwave(SOXPIDfilename)
+		fmcontrol.killwave()
 		time.sleep(sleeptime)
-		p = fmcontrol.starttransmit(mtp, freq, transmitter, scriptfilename, SOXPIDfilename)
+		p = fmcontrol.starttransmit(mtp, frequency)
 		if duration != 0:
 			time.sleep(duration)
 			fmcontrol.stoptransmit(p)
 	else:
 		print("Музыкальный файл не существует или индекс неверен")
 		
-def findandplay(files, music, memfile, freq, scriptfilename, transmitter, SOXPIDfilename, duration):
+def findandplay(files, music, frequency, duration):
 	foundedfilesWI = findfileinlist(files, music, True)
 	foundedfilesNI = findfileinlist(files, music, False)
 	if (len(foundedfilesWI) != 0):
@@ -120,12 +136,12 @@ def findandplay(files, music, memfile, freq, scriptfilename, transmitter, SOXPID
 		return False
 	else:
 		if (answer == defaults.yesplus or answer == defaults.yesrusplus):
-			foldbuilder.printtree(foundedfilesNI, memfile[0])
+			foldbuilder.printtree(foundedfilesNI, defaults.MemoryFile)
 		index = askforindex("Введи индекс песни: ")
-		playproc(foundedfilesNI, freq[0], scriptfilename[0], transmitter[0], SOXPIDfilename[0], duration, index, 2)
+		playproc(foundedfilesNI, frequency, index, duration, 2)
 		return True
 		
-def playlistfindandplay(dirs, music, memfile, plfile, plscript):
+def playlistfindandplay(dirs, music):
 	foundeddirsWI = findfileinlist(dirs, music, True)
 	foundeddirsNI = findfileinlist(dirs, music, False)
 	
@@ -145,17 +161,17 @@ def playlistfindandplay(dirs, music, memfile, plfile, plscript):
 		if music == "":
 			index = askforindex("Введи индекс плейлиста: ")
 			playlistfiles = foldbuilder.getfilteredfilesdirslist([dirs[index]], ["mp3"])
-			foldbuilder.printtree(playlistfiles, plfile[0])
+			foldbuilder.printtree(playlistfiles, defaults.PlaylistFile)
 			print("Играю плейлист: ")
-			print(open(plfile[0],'r').read())
+			print(open(defaults.PlaylistFile,'r').read())
 		else:
-			foldbuilder.printtree(foundeddirsNI, plfile[0])
+			foldbuilder.printtree(foundeddirsNI, defaults.PlaylistFile)
 			playlistfiles = foundeddirsNI
 			print("Играю плейлист")
 		
 		if (answer == defaults.yesplus or answer == defaults.yesrusplus):
-			foldbuilder.printtree(playlistfiles, memfile[0])
+			foldbuilder.printtree(playlistfiles, defaults.MemoryFile)
 			
 		print("Плейлист составлен и выгружен")
-		p = subprocess.Popen("python3 " + plscript[0], shell = True)
+		p = subprocess.Popen("python3 " + defaults.PlaylistScript, shell = True)
 		return playlistfiles

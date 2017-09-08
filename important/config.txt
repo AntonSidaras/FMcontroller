@@ -1,0 +1,7 @@
+[music]
+/etc/Music
+[output]
+Frequency = 100.3
+Duration = 0
+Extention = mp3
+Shuffle = on

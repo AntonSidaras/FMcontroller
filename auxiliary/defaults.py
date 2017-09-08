@@ -1,33 +1,35 @@
 # -*- coding: utf-8 -*-
-defaultmusicdirs = ["/home/pi/g30kv90/Music"]
-configuration = "service/config.txt"
+defaultmusicdirs = ["/etc/Music"]
+configuration = "important/config.txt"
 keywords = ["[music]","[output]"]
 
-parameters = ["PlayScript","SoxPidFilename", "KillFile",
-"NextFile", "PrevFile", "TouchFile", "MemoryFile", "PlaylistFile",
-"Frequency", "PlaylistScript", "TunerScript", "Duration", "Extention", 
-"Shuffle", "Transmitter", "KillTunerFile"]
+parameters = ["Frequency", "Duration", "Extention", "Shuffle"]
 
 music = keywords[0]
 output = keywords[1]
-PlayScript = parameters[0]
-SoxPidFilename = parameters[1]
-KillFile = parameters[2]
-NextFile = parameters[3]
-PrevFile = parameters[4]
-TouchFile = parameters[5]
-MemoryFile = parameters[6]
-PlaylistFile = parameters[7]
-Frequency = parameters[8]
-PlaylistScript = parameters[9]
-TunerScript = parameters[10]
-Duration = parameters[11]
-Extention = parameters[12]
-Shuffle = parameters[13]
-Transmitter = parameters[14]
-KillTunerFile = parameters[15]
 
-singlecommands = ("exit", "renew", "stop", "mem", "list")
+Frequency = parameters[0]
+Duration = parameters[1]
+Extention = parameters[2]
+Shuffle = parameters[3]
+
+Transmitter = "important/./fm"
+
+KillFile = "sigfiles/killfile"
+NextFile = "sigfiles/nextfile"
+PrevFile = "sigfiles/prevfile"
+TouchFile = "sigfiles/touchfile"
+KillTunerFile = "sigfiles/tunkill"
+
+PlayScript = "service/./play.sh"
+SoxPidFilename = "service/pid"
+MemoryFile = "service/mem"
+PlaylistFile = "service/playlist"
+
+PlaylistScript = "playlist.py"
+TunerScript = "433tuner.py"
+
+singlecommands = ("exit", "renew", "stop", "mem", "list", "help")
 multiplecommands = ("play", "playlist")
 answers = ("y", "n", "д", "н", "y+", "д+")
 plsignals = ("kill", "next", "prev", "leave", "touch")
@@ -37,6 +39,7 @@ renew = singlecommands[1]
 stop = singlecommands[2]
 mem = singlecommands[3]
 list = singlecommands[4]
+help = singlecommands[5]
 
 play = multiplecommands[0]
 playlist = multiplecommands[1]
@@ -53,4 +56,3 @@ next = plsignals[1]
 previous = plsignals[2]
 leave = plsignals[3]
 touch = plsignals[4]
-
