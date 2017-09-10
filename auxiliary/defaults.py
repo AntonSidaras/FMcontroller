@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-defaultmusicdirs = ["/etc/Music"]
+defaultmusicdirs = ["/home/pi/g30kv90/Music"]
 configuration = "important/config.txt"
 keywords = ["[music]","[output]"]
 
@@ -12,6 +12,9 @@ Frequency = parameters[0]
 Duration = parameters[1]
 Extention = parameters[2]
 Shuffle = parameters[3]
+
+Sigfiles = "sigfiles"
+Service = "service"
 
 Transmitter = "important/./fm"
 
@@ -27,7 +30,7 @@ MemoryFile = "service/mem"
 PlaylistFile = "service/playlist"
 
 PlaylistScript = "playlist.py"
-TunerScript = "433tuner.py"
+TunerScript = "tuner.py"
 
 singlecommands = ("exit", "renew", "stop", "mem", "list", "help")
 multiplecommands = ("play", "playlist")

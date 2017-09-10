@@ -8,6 +8,12 @@ from auxiliary import foldbuilder
 from auxiliary import fmcontrol
 
 def checkdefaults():
+	if os.path.exists(defaults.Sigfiles) == False:
+		os.mkdir(defaults.Sigfiles)
+		
+	if os.path.exists(defaults.Service) == False:
+		os.mkdir(defaults.Service)
+		
 	if os.path.exists(defaults.configuration) == False:
 		print("Файл конфигурации не существует")
 		return False
